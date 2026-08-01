@@ -1,0 +1,50 @@
+# ============================================================================
+# Proyecto EDA + IA Automatizado — requirements.txt
+# ============================================================================
+# Python requerido: 3.10+
+#
+# Este archivo está dividido en dos bloques:
+#
+#   1) DEPENDENCIAS YA USADAS Y PROBADAS (Módulos 1, 2 y 3)
+#      Versiones fijadas (==) porque el código ya fue validado contra ellas.
+#      Instalar exactamente estas versiones evita sorpresas por cambios de
+#      comportamiento entre versiones de pandas/numpy/sklearn.
+#
+#   2) DEPENDENCIAS PARA LOS MÓDULOS PENDIENTES (4 y 5)
+#      Aún no se han usado en código real, por lo que van con versión mínima
+#      (>=) en vez de fijada. Cuando se implementen esos módulos, se debe
+#      correr `pip freeze` de nuevo y fijar la versión exacta que se probó.
+#
+# Instalación:
+#   pip install -r requirements.txt
+#
+# Nota para el equipo: si usan Windows y `weasyprint` falla al instalar
+# (requiere GTK), usar la alternativa `fpdf2` que ya está incluida más abajo
+# como plan B para el Módulo 5 (exportación de reportes).
+# ============================================================================
+
+# --- Módulo 1: Carga de datos y detección de tipos ---
+pandas==3.0.2
+numpy==2.4.4
+openpyxl==3.1.5          # lectura/escritura de archivos .xlsx
+
+# --- Módulo 2: EDA automatizado y detección de outliers ---
+scipy==1.17.1            
+
+# --- Módulo 3: Clustering y PCA ---
+scikit-learn==1.8.0
+
+# ============================================================================
+# PENDIENTE DE VALIDAR — Módulos 4 y 5 (equipo: fijar versión al usarlas)
+# ============================================================================
+
+# --- Módulo 5: Interfaz ---
+streamlit>=1.38
+
+# --- Módulo 5: Visualizaciones interactivas ---
+plotly>=5.24
+
+# --- Módulo 5: Generación de reportes (exportación) ---
+jinja2>=3.1
+weasyprint>=62.0         # plan A: exportación HTML -> PDF con estilos CSS
+fpdf2>=2.7                # plan B: si weasyprint da problemas de instalación
